@@ -1,1 +1,144 @@
+assignment_a HTML, CSS, JavaScript 
+
+###################################
+
+assignmetn 1 cms 
+General Remarks
+
+Build a CMS consisting of the following files:
+
+    cms.php - the server side file. This file will be requested from the client browser.
+    At least 3 external style files, e.g. light.css, dark.css, large_fonts.css.
+    At least 3 markdown 
+
+    Links to an external site. content files, e.g. home.md, ucc.md, contact.md.
+
+Required Features
+
+The completed system should meet the following requirements:
+
+    Clear layout with vertical bar for navigation and theme switching
+    Selecting a link in the navigation bar shall result in the display of the corresponding content file. See also item 6.
+    If an unexpected query parameter is received, then the system should display the error message Invalid parameter. No such content!
+    If no query parameter is present, then the system should display the default home content, rather than showing a PHP warning.
+    use the isset() function and the if-else control structure to achieve this.
+    If the query parameter is valid but the requested content cannot be retrieved, then the system should respond with the message Error. Content file cannot be retrieved. This might happen when a content file is (deliberately or not) temporarily unreadable or has been moved. In order to demonstrate this feature properly, make sure you have a permanently failing content link in your navigation bar.
+    You can also test this feature by temporarily removing server read access from some content file. To do so, start a terminal. If you are not in G20, connect to csgate.ucc.ie via ssh. Then navigate with cd commands to your web content tree and execute chmod 600 home.md. This will make the markdown file home.md inaccessible for the web server.
+    Now, go to your web browser and try the Home link of your CMS app. It should now fail with above mentioned error message. If not, then your php code in cms.php is not correct. Run chmod 604 home.md to undo this change. 
+    I believe you can also use filezilla to modify file permissions remotely.
+    The markdown code in the content files should be rendered properly when the file is displayed. Refer to recent lab instructions for implementation.
+    In short, you will need to download this markdown parser 
+
+Links to an external site. and to study how to use Links to an external site. it.
+There is also an online demo
+Links to an external site..
+A click on one a theme button should activate the associated style sheet, e.g. clicking on the dark button should activate the dark theme.
+Refer to your work from CS6101 how to implement this feature efficiently.
+The content area should have the same height as the navigation bar. If the displayed content does not fit into the available vertical space, then scroll bars should appear next to the content area. Thus, the navigation bar will never scroll out of view.
+Use the overflow CSS property (Links to an external site.) to achieve this.
+Your code should be clear and concise. Avoid repetition of code or layout instructions! A feature complete work does not guarantee a 100% mark.
+
+
+
+###########################
+
+Required Features of this CMS
+
+In the subsections below the required features of your new application are listed. Some of these have been the subject of previous tutorials.
+2.1 AJAX Content Selection with Soft Fail
+
+Clicking a navigation button should result in the display of the corresponding rendered markdown content file. The content should be inserted via an AJAX request using the modern fetch API. We require the following additional features:
+
+    Soft Fail - If the content cannot be shown (bad parameter or unreadable remote file) then the previously selected content should remain in the content window. The user will be notified about the problem with an appropriate status message.
+    Persistent Theme Selection - After requesting a new content section the selected CSS theme should remain active, rather than reverting to the default theme. If you implement the AJAX call correctly then this will happen automatically.
+
+2.2 Status Reporting
+
+We require an improved layout. There shall now be a new status line below the main content window. This is very we now display informative status messages. At  least, the following messages should be shown when the appropriate conditions arise and with a reasonable level parameter:
+
+    Loading, please wait...
+    Content successfully loaded.
+    Error: [human readable http status text] These tests are generated from the returned http status codes.
+    Theme switched to [active CSS file or theme title]
+
+The generation of these various message texts often requires the concatenation of several snippets of text (variables as well as verbatim strings). As explained in class string interpolation (aka template strings)
+
+Links to an external site. are an elegant alternative for composing such messages. For this you need to locate the backtick key on your keyboard.
+2.3 Remote Markdown Parsing
+
+The remote markdown content files shall be converted to HTML at server side using the code in content_server.php from previous lab tutorials.
+2.4  Nav Buttons to Select Failing Content Sections for Testing
+
+For easy testing, make sure to have two failing content buttons in your navigation bar, one sending an invalid request (status 404) and one requesting an unavailable file (status 503).
+2.5 Default Content
+
+At this stage, no content will be shown when cms2.html is initially loaded. There is an easy fix for that. Please study the onload
+
+Links to an external site. event. As before, the home content section should be displayed by default.
+2.6 Single File Server Code
+
+At this stage, we have two code files, i.e. cms2.html and content_server.php. We are now merging them into one single file with the name cms2.php. This is easier than it sounds. Essentially, we can just append the html file to the php file and add another outermost if-then control structure in such a way that
+
+    when the file parameter is present in the request then we activate the processing code
+    otherwise we send the initial html client code. Please note that this is the case where we formerly returned http status 400!
+
+Recall from the lecture that it is possible to temporarily leave PHP mode in the middle of a control structure (Iike if or switch).
+
+When you have completed this step you should delete the two now unused files cms2.html and content_server.php and test your work again! If something is broken, check the remote links in your AJAX function!
+
+
+############################
+
+We are creating yet another version of a CMS. This time it will be a Single Page Application with a JSON "database".
+
+This time, there is no server part to code. So there is no PHP coding involved for this assignment.
+Preparation
+
+Create a new folder and copy the main php file from assignment 2 into this folder.
+
+Rename the new main file to cms3.html and delete all old php code in this file. Copy your CSS files from assignment 2 to the appropriate location in the new folder. You can re-use these CSS files for your new work but you'll have to make adjustments.
+
+Do not copy old content files.
+
+ 
+File Structure
+
+ This time our CMS will consist of two functional files and at least three CSS theme files (like in assignment 2):
+
+    cms3.html - the main server side file. This is the file which the user requests from their browser.
+    A new file with name content.json. This single file contains your entire content.
+    At least 3 external style files, e.g. light.css, dark.css, large_fonts.css.
+
+Create content.json
+
+For this assignment we will not not artificially slow down the server response as we did with the php sleep() function in the last assignment.
+
+Create content.json and place it next to cms3.html. The structure of content.json must be an array of objects. Each element in this array is an object with three keys: title, abstract, long. Every key and every value is of type string.
+
+Populate this JSON file with content for at least 3 different titles, e.g. home, ucc, personal. See lecture and labs for details.
+
+ 
+Required Features of the New CMS
+
+    Clear layout. The main elements are now navigation, theme switching, content window, view toggle and status message line. Read below for details.
+    When the page is initially loaded, a JS function will be activated which fetches content.json and saves the contained array as a global variable 
+
+    Links to an external site..
+    For each title, an identically labelled navigation button is automatically created in the navigation bar. We will do a relevant tutorial after Easter.
+    Clicking on a title button in the navigation bar should display the corresponding content in the main area.
+    At an appropriate location there is a (new) button for toggling between abstract and long content view. See lecture.
+    The default view after the page has loaded should be content element 0 is shown and abstract view is enabled.
+    Modifications in content.json should automatically take effect as soon as the unmodified file cms3.html is reloaded. 
+    Theme switching should be implemented as in your previous work.
+    Whenever possible, an appropriate status message is displayed.
+    Your code should be clear and concise. Avoid repetition of code or layout instructions!
+    This time we only deal with plain text content. So you are not required to include a Markdown parser. However, if you what an extra challenge then you are very welcome to implement this in any manner you find appropriate. You can earn extra marks but you will not be marked down for problems/failure in this part of your work.
+
+ 
+Hints and Implementation Details
+
+    You should use the fetch function to load the JSON array into a global variable. The main difficulty will likely be feature 3.
+    In a good design, there is only one single occurrence of the fetch function in the whole code.
+    In a good design, you need to write exactly 3 JavaScript functions. Please re-think if you are going to use fewer or more user defined functions!
+    It is bad design if you make too many assumptions about the JSON content file. Your web app should still work perfectly if you temporarily change the URL of your JSON content file to that of a classmate' s. Try this out!
 
