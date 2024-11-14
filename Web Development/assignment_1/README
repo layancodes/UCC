@@ -1,1 +1,30 @@
+Project 1: CMS with PHP  (HTML, CSS, JavaScript)
 
+This project implements a Content Management System (CMS) using HTML, CSS, JavaScript, and PHP. The CMS allows users to navigate between different content pages, switch themes, and handle errors gracefully when content cannot be retrieved. The system uses markdown files to store content, and features dynamic rendering of content via PHP.
+Key Features
+
+  - Navigation Bar: Links to markdown files for different content pages. Selecting a link dynamically loads the content.
+  - Error Handling: Displays appropriate error messages for invalid query parameters, missing content, or inaccessible files (e.g., 404 or 503 errors).
+  - Theme Switching: Users can switch between different themes (light, dark, and large fonts), with the selected theme persisting across content changes.
+  - Responsive Layout: The navigation bar remains fixed while the content area scrolls as needed.
+  - Status Messages: The CMS displays status messages such as "Loading, please wait..." or "Content successfully loaded".
+  - Markdown Rendering: Content is stored in markdown files and rendered as HTML on the server side using PHP.
+
+Technologies used
+
+    HTML for page structure.
+    CSS for styling and theme switching.
+    PHP for server-side content handling and markdown parsing.
+    JavaScript for dynamic content fetching and status message display.
+
+ Project structure :
+        cms.php: PHP files for rendering content and handling theme switching.
+        light.css, dark.css, large_fonts.css: CSS files for different themes.
+        home.md, ucc.md, contact.md: Markdown files containing the content.
+        status_line.js: JavaScript to manage status messages and AJAX content loading (for Project 2).
+
+How to use
+
+    Clone or download the repository.
+    Open the respective HTML/PHP file for the project you wish to test in your browser.
+    The page will load content dynamically based on the PHP backend and markdown files. You can navigate through the CMS, switch themes, and see status messages.
