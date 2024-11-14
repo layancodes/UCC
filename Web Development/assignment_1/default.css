@@ -1,0 +1,66 @@
+
+/*GENERAL*/
+body{
+    background-color: #000000;
+    color: #FFFFFF;
+}
+
+a {
+    color:#FFFFFF;
+}
+
+h3{
+    color: #F600FA;
+}
+
+/*NAVIGATION*/
+ul{
+    background-color: #F600FA;
+}
+
+li a:hover{
+    color:#000000;
+}
+
+/*INTRODUCTION*/ 
+
+
+#logo{
+    background-color: #FFFFFF;
+}
+
+.emph{
+    color:#F600FA;
+}
+
+/*TABLES*/
+table {
+    border: 1px solid #FFFFFF;
+}
+
+th, tr, td{
+    border: 1px solid #FFFFFF;
+}
+
+table a{
+    color:#FFFFFF; 
+}
+
+table a:hover{
+    color:#000000;
+}
+
+table tr:hover{
+    background-color: #F600FA;
+}
+
+/*SERVICES*/
+#currency{
+    color:#F600FA;
+  }
+
+.labelcolor{
+    color:#F600FA;
+}
+
+/*END OF CODE*/ 

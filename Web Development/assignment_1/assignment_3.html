@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Assignment 3</title>
+
+<link id="css-link" rel="stylesheet" href="default.css">
+<style> 
+
+/*GENERAL*/
+body{
+    font-family: Consolas, monaco, monospace;
+    margin:0px 0px 30px 0px;
+}
+
+h2{
+    margin-left: 24px;
+    padding-top:160px;
+}
+
+h3{
+  margin-left: 24px;
+}
+
+p{
+  text-align: justify;
+}
+
+
+/*NAVIGATION*/
+ul {
+    padding: 25px;
+    margin:0px;
+    position:fixed;
+    top:0;
+    width:100%;
+}
+
+li{
+    display: inline;
+    font-size: 1.5em;
+    padding: 10px 20px 10px 10px;
+    margin-left: 4px;
+}
+
+/*INTRODUCTION*/
+header{
+    padding: 10px;
+    margin: 0px 24px 24px 24px;  
+}
+
+#logo{
+    float: left;
+    width:13%;
+    padding: 5px;
+    margin: 180px 20px 10px 24px;
+}
+
+.emph{
+    font-style: italic;
+}
+
+header p{
+  margin-left: 24px;
+  margin-right: 24px;
+}
+
+button{
+  width: 6em;
+
+}
+
+/*TABLES*/
+table {
+    border-collapse: collapse;
+    margin: auto;
+    width:70%;
+}
+
+th {
+    text-align: left;
+}
+
+th, tr, td{
+    padding: 10px;
+}
+
+/*CITY IMAGES*/
+.description{
+   width:70%;
+   margin:auto;
+   line-height: 2em;
+}
+
+.city_images{
+    width: 30%;
+    display:block;
+    margin: auto;
+}
+
+figcaption{
+    text-align: center;
+    padding:20px;
+    font-style: italic;
+}
+
+/*SERVICES*/
+#services_box{
+  margin: 24px 24px 0px 24px;
+}
+form{
+  margin-left: 24px;
+}
+
+/*END OF STYLE*/
+</style>
+</head>
+
+<body>
+
+<!--NAVIGATION BAR-->
+<ul>
+    <li><a href=#home>Home</a></li>
+    <li><a href=#class_tt>Class Timetable</a></li>
+    <li><a href=#lab_tt>Lab Timetable</a></li>
+    <li><a href=#city1>Ramallah</a></li>
+    <li><a href=#city2>Bangkok</a></li>
+    <li><a href=#services>Services</a></li>
+    <button onclick="switchTheme('default.css')">default</button>
+    <button onclick="switchTheme('day.css')">day</button>
+    <button onclick="switchTheme('contrast.css')">contrast</button>
+
+</ul>
+
+<!--INTRODUCTION-->
+<header>
+  <img id="logo" src="ucc_logo_irish.svg" alt="University College Cork logo">
+  <h2 id="home">Hello. Welcome, visitor.</h2>
+  <p>This is <span class="emph">Layan</span> from Palestine. I'm here to learn and create. I enjoy baking and testing recipes and bringing people together with food.
+  What I don't enjoy is <span class="emph">disinformation</span>, <span class="emph">data privacy violations</span>, and <span class="emph">inhumane technology</span>. I have a cat and I like <span class="emph">cheesecake</span>, and so does she.
+  </p>
+</header>
+
+<!--CLASS TIMETABLE-->
+<h2 id="class_tt">Class Timetable for Msc Interactive Media</h2>
+<table>
+  <tr>
+    <th>Module Code</th>
+    <th>Module Title</th>
+    <th>Day-Time</th>
+    <th>Room Code</th>
+  </tr>
+  <tr>
+    <td><a href="https://ucc-ie-public.courseleaf.com/modules/?keyword=CS6100&srcdb=2022">CS6100</a></td>
+    <td>Authoring</td>
+    <td>Monday<br>12:00-14:00</td>
+    <td>WGB_G02</td>
+  </tr>
+  <tr>
+    <td><a href="https://ucc-ie-public.courseleaf.com/modules/?keyword=CS6101&srcdb=2022">CS6101</a></td>
+    <td>Web Development for Digital Media</td>
+    <td>Wednesday<br> 3:00-15:00</td>
+    <td>WGB_G09</td>
+  </tr>
+  <tr>
+    <td><a href="https://ucc-ie-public.courseleaf.com/modules/?keyword=CS6102&srcdb=2022">CS6102</a></td>
+    <td>Graphics for Interactive Media</td>
+    <td>Friday<br>13:00-15:00</td>
+    <td>WGB_G13</td>
+  </tr><tr>
+    <td><a href="https://ucc-ie-public.courseleaf.com/modules/?keyword=CS6103&srcdb=2022">CS6103</a></td>
+    <td>Audio and Sound Engineering</td>
+    <td>Monday<br>16:00-18:00</td>
+    <td>WGB_G08</td>
+  </tr><tr>
+    <td><a href="https://ucc-ie-public.courseleaf.com/modules/?keyword=CS6104&srcdb=2022">CS6104</a></td>
+    <td>Digital Video Capture and Packaging</td>
+    <td>Wednesday<br>17:00-19:00</td>
+    <td>WGB_G08</td>
+  </tr><tr>
+    <td><a href="https://ucc-ie-public.courseleaf.com/modules/?keyword=CS6111&srcdb=2022">CS6111</a></td>
+    <td>3D Graphics and Modelling</td>
+    <td>Tuesday<br>16:00-18:00</td>
+    <td>WGB_G18</td>
+  </tr>
+</table>
+
+<!--LAB TIMETABLE-->
+<h2 id="lab_tt">Lab Timetable for Msc Interactive Media</h2>
+<table>
+  <tr>
+    <th>Module Code</th>
+    <th>Module Title</th>
+    <th>Day-Time</th>
+    <th>Room Code</th>
+  </tr>
+  <tr>
+    <td><a href="https://ucc-ie-public.courseleaf.com/modules/?keyword=CS6100&srcdb=2022">CS6100</a></td>
+    <td>Authoring</td>
+    <td>Tuesday<br>11:00-12:00</td>
+    <td>WGB_1.15</td>
+  </tr>
+  <tr>
+    <td><a href="https://ucc-ie-public.courseleaf.com/modules/?keyword=CS6101&srcdb=2022">CS6101</a></td>
+    <td>Web Development for Digital Media</td>
+    <td>Thursday<br> 13:00-14:00</td>
+    <td>WGB_G21</td>
+  </tr>
+  <tr>
+    <td><a href="https://ucc-ie-public.courseleaf.com/modules/?keyword=CS6102&srcdb=2022">CS6102</a></td>
+    <td>Graphics for Interactive Media</td>
+    <td>Friday<br>15:00-16:00</td>
+    <td>WGB_1.15</td>
+  </tr><tr>
+    <td><a href="https://ucc-ie-public.courseleaf.com/modules/?keyword=CS6103&srcdb=2022">CS6103</a></td>
+    <td>Audio and Sound Engineering</td>
+    <td>Tuesday<br>13:00-14:00</td>
+    <td>WGB_1.14</td>
+  </tr><tr>
+    <td><a href="https://ucc-ie-public.courseleaf.com/modules/?keyword=CS6104&srcdb=2022">CS6104</a></td>
+    <td>Digital Video Capture and Packaging</td>
+    <td>Wednesday<br>12:00-13:00</td>
+    <td>WGB_1.15</td>
+  </tr><tr>
+    <td><a href="https://ucc-ie-public.courseleaf.com/modules/?keyword=CS6111&srcdb=2022">CS6111</a></td>
+    <td>3D Graphics and Modelling</td>
+    <td>Monday<br>11:00-12:00</td>
+    <td>WGB_1.15</td>
+  </tr>
+</table>
+
+<!--CITY 1-->
+<h2 id="city1" >Ramallah, Palestine</h2>
+<img class="city_images" src="ramallah1.jpg" alt="Ramallah City At Night">
+<figcaption>Al-Manara Square, Ramallah</figcaption>
+<p class="description">The image above shows Al-Manara square in Ramallah city center. The square features 5 lion statues that symbolize the five founding families of the city. Ramallah is originally a Christian city founded by Christian families. The square is where national protests, demonstrations, and celebrations commonly take place.
+</p>
+
+<!--CITY 2-->
+<h2 id="city2">Bangkok, Thailand</h2>
+<img class="city_images" src="bangkok.jpg" alt="Ramallah City Market">
+<figcaption>Bangkok Skyline</figcaption>
+<p class="description">The image above shows the city I'd like to visit the most: Bangkok, Thailand. I want to explore different and new flavours. Ideally, I'd love to attend the Thai Taste Festival, which includes a variety of Thai food from restraunts to street food. I would also enjoy exploring traditional methods of making coconut milk, palm sugar, and rice noodles.
+</p>
+
+<!--SERVICES-->
+<h2 id="services">Services</h2>
+<h3>Search on duckduckgo</h3>
+<form action="https://duckduckgo.com/" >
+  
+  Search for: 
+  <input type="text" name="q">
+  <input type="submit" value="Search">
+  <p>Choose safe search mode:</p>
+  <input type="radio" name="kp" value="1" id="on" checked>
+  <label for="on">On</label>
+  <br><input type="radio" name="kp" value="-1" id="moderate">
+  <label for="moderate">Moderate</label>
+  <!--THEMES-->
+  <p><label for="theme">Choose a colour theme</label>
+  <select name="kae" id="theme">
+    <option value="-1" selected>Default</option>
+    <option value="r">Retro</option>
+    <option value="t">Terminal</option>
+    <option value="d">Dark</option>
+    <option value="c">Contrast</option>
+  </select>
+  </p>
+  <!--FONT-->
+  <p><label for="font">Choose a font size</label>
+    <select name="ks" id="font">
+      <option value="n" selected>Large</option>
+      <option value="l">Larger</option>
+      <option value="t">Largest</option>
+      <option value="m">Medium</option>
+      <option value="s">Small</option>
+    </select>
+    </p>
+</form>
+<!--CONVERTER-->
+<h3>Money Converter</h3>
+<form action="https://www.xe.com/currencyconverter/convert/">
+<p><label for="amount">Amount</label>
+  <input type="number" name="Amount">
+  <input type="hidden" name="From" value="EUR" id="from">
+    From
+    <label for="from" class="labelcolor">EUR</label>
+    To
+    <input type="hidden" name="To" value="GBP" id="to">
+    <label for="to" class="labelcolor">GBP</label>
+    <button type="submit" value="Convert" formtarget="_blank">Convert</button>
+    <button type="button" onclick="switchCurrency()">Switch Currencies</button>
+  </p>
+</form>
+
+<!--SCRIPT-->
+<script>
+  function switchTheme(css) {
+    document.getElementById("css-link").href =css;
+  }
+  
+  function switchCurrency() {
+    [document.getElementById("from").value, document.getElementById("to").value] 
+    = [document.getElementById("to").value, document.getElementById("from").value];
+
+    var toLabel = document.querySelector('label[for="to"]').textContent;
+    var fromLabel = document.querySelector('label[for="from"]').textContent;
+
+    document.querySelector('label[for="from"]').textContent 
+    = toLabel;
+    document.querySelector('label[for="to"]').textContent 
+    = fromLabel;
+  }
+  </script>
+
+<!--END OF BODY-->
+</body>
+</html>
+<!--END OF CODE-->
